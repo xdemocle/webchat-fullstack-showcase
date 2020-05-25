@@ -5,7 +5,7 @@
   "scripts": {
     "clean": "rimraf ./dist && mkdir dist",
     "start": "run-p dev ts-script-dev",
-    "dev": "webpack-dev-server --open",
+    "dev": "yarn clean && webpack-dev-server --open",
     "ts-script": "ts-node --project server/tsconfig.json server/index.ts",
     "ts-script-dev": "ts-node-dev --project server/tsconfig.json --inspect -- server/index.ts",
     "prebuild": "yarn clean",
