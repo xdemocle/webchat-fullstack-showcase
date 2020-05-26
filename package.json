@@ -6,8 +6,8 @@
     "clean": "rimraf ./dist && mkdir dist",
     "start": "run-p dev ts-script-dev",
     "dev": "yarn clean && webpack-dev-server --open",
-    "ts-script": "ts-node --project server/tsconfig.json server/index.ts",
-    "ts-script-dev": "ts-node-dev --project server/tsconfig.json --inspect -- server/index.ts",
+    "ts-script": "ts-node --project src/server/tsconfig.json server/index.ts",
+    "ts-script-dev": "ts-node-dev --project src/server/tsconfig.json --inspect -- src/server/index.ts",
     "prebuild": "yarn clean",
     "build": "cross-env NODE_ENV=production webpack",
     "serv-prod": "cross-env NODE_ENV=production run-p build ts-script",
@@ -69,6 +69,7 @@
     "react-redux": "^7.2.0",
     "react-translate": "^7.0.1",
     "redux": "^4.0.5",
+    "redux-localstorage": "^0.4.1",
     "socket.io": "^2.3.0",
     "socket.io-client": "^2.3.0"
   },

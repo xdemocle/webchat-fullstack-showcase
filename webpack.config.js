@@ -11,7 +11,6 @@ const CopyPlugin = require('copy-webpack-plugin')
 const BitBarProgressPlugin = require('bitbar-webpack-progress-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlPlugin = require('html-webpack-plugin')
-// const RunNodeWebpackPlugin = require('run-node-webpack-plugin')
 
 const isEnvDevelopment = process.env.NODE_ENV === 'development'
 const isEnvProduction = process.env.NODE_ENV !== 'development'
@@ -83,7 +82,9 @@ module.exports = {
       // Options similar to the same options in webpackOptions.output
       // both options are optional
       filename: isEnvDevelopment ? '[name].css' : '[name].[contenthash].css',
-      chunkFilename: isEnvDevelopment ? '[id].[name].css' : '[id].[name].[contenthash].css',
+      chunkFilename: isEnvDevelopment
+        ? '[id].[name].css'
+        : '[id].[name].[contenthash].css',
     }),
     new webpack.SourceMapDevToolPlugin({
       filename: '[name].js.map',
@@ -101,6 +102,5 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
     }),
-    // new RunNodeWebpackPlugin({ scriptToRun: path.resolve(__dirname, 'run-server.js') }),
   ],
 }
