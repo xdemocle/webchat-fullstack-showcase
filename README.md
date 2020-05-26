@@ -18,6 +18,8 @@ material-ui.com/styles/basics/#hook-api
 
 import { makeStyles } from '@material-ui/core/styles';
 
+Chose sipler plugin for internatiolization
+
 ## Optional
 
 - theme styling
