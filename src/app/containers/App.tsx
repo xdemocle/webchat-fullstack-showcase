@@ -1,31 +1,31 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react'
-import Container from '@material-ui/core/Container'
-import Typography from '@material-ui/core/Typography'
-import Box from '@material-ui/core/Box'
-import Link from '@material-ui/core/Link'
+import { AppBar, Container, Tab, Tabs } from '@material-ui/core'
+import { a11yProps, TabPanel } from '../components/TabPanel'
+import ChatContainer from './Chat'
+import SettingsContainer from './Settings'
 
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  )
-}
+export default () => {
+  const [value, setValue] = React.useState(0)
 
-export default function App(): JSX.Element {
+  const handleChange = (event: React.ChangeEvent<any>, newValue: number) => {
+    setValue(newValue)
+  }
+
   return (
     <Container maxWidth="sm">
-      <Box my={4}>
-        <Typography variant="h4" component="h1" gutterBottom>
-          Create React App v4-beta example with TypeScript
-        </Typography>
-        <Copyright />
-      </Box>
+      <AppBar position="static">
+        <Tabs value={value} onChange={handleChange} aria-label="topbar tabs">
+          <Tab label="Chat" {...a11yProps(0)} />
+          <Tab label="Settings" {...a11yProps(1)} />
+        </Tabs>
+      </AppBar>
+      <TabPanel value={value} index={0}>
+        <ChatContainer />
+      </TabPanel>
+      <TabPanel value={value} index={1}>
+        <SettingsContainer />
+      </TabPanel>
     </Container>
   )
 }
