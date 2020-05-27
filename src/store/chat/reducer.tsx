@@ -5,7 +5,6 @@ const defaultState: ChatState = {
   messages: [],
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default (state = defaultState, action: any) => {
   console.log(action)
   switch (action.type) {

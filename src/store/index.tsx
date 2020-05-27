@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { compose, createStore, combineReducers, Reducer } from 'redux'
 import persistState from 'redux-localstorage'
 import { ChatState } from './chat/types'

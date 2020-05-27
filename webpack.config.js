@@ -11,23 +11,49 @@ const CopyPlugin = require('copy-webpack-plugin')
 const BitBarProgressPlugin = require('bitbar-webpack-progress-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlPlugin = require('html-webpack-plugin')
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
 
 const isEnvDevelopment = process.env.NODE_ENV === 'development'
 const isEnvProduction = process.env.NODE_ENV !== 'development'
 
 module.exports = {
   mode: isEnvDevelopment ? 'development' : 'production',
-  devtool: isEnvDevelopment ? 'eval-source-map' : 'inline-source-map',
   entry: './src/app/index.tsx',
+  devtool: isEnvDevelopment ? 'eval-source-map' : 'inline-source-map',
+  devServer: {
+    contentBase: './dist',
+    hot: true,
+  },
   resolve: {
-    extensions: ['.ts', '.tsx', '.js'],
+    extensions: ['.ts', '.tsx', '.js', '.jsx'],
+    alias: {
+      'react-dom': '@hot-loader/react-dom',
+    },
   },
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
-        use: 'ts-loader',
+        test: /\.(j|t)sx?$/,
         exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            cacheDirectory: true,
+            babelrc: false,
+            presets: [
+              [
+                '@babel/preset-env',
+                { targets: { browsers: 'last 2 versions' } },
+              ],
+              '@babel/preset-typescript',
+              '@babel/preset-react',
+            ],
+            plugins: [
+              ['@babel/plugin-proposal-class-properties', { loose: true }],
+              'react-hot-loader/babel',
+            ],
+          },
+        },
       },
       {
         test: /\.css$/i,
@@ -68,6 +94,7 @@ module.exports = {
     },
   },
   plugins: [
+    new ForkTsCheckerWebpackPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
     new WebpackBar(),
     new BitBarProgressPlugin(),

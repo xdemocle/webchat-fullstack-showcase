@@ -1,10 +1,9 @@
 import { SEND_MESSAGE, GET_MESSAGE } from './actions'
-import { INITIAL_SETTINGS } from '../../app/constants'
+import { INITIAL_SETTINGS } from './constants'
 import { SettingsState } from './types'
 
 const defaultState: SettingsState = INITIAL_SETTINGS
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default (state = defaultState, action: any) => {
   switch (action.type) {
     case SEND_MESSAGE:

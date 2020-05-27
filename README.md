@@ -14,6 +14,8 @@ webpackbar bitbar-webpack-progress-plugin
 
 ## Notes
 
+github.com/gaearon/react-hot-loader
+
 material-ui.com/styles/basics/#hook-api
 
 import { makeStyles } from '@material-ui/core/styles';

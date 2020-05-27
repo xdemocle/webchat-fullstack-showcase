@@ -1,11 +1,11 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+import { hot } from 'react-hot-loader/root'
 import React from 'react'
 import { AppBar, Container, Tab, Tabs } from '@material-ui/core'
 import { a11yProps, TabPanel } from '../components/TabPanel'
 import ChatContainer from './Chat'
 import SettingsContainer from './Settings'
 
-export default () => {
+const App = () => {
   const [value, setValue] = React.useState(0)
 
   const handleChange = (event: React.ChangeEvent<any>, newValue: number) => {
@@ -29,3 +29,5 @@ export default () => {
     </Container>
   )
 }
+
+export default hot(App)

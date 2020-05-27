@@ -14,9 +14,7 @@
     "forceConsistentCasingInFileNames": true,
     "allowSyntheticDefaultImports": true,
     "isolatedModules": true,
-    "noEmit": true,
     "removeComments": true,
-    "sourceMap": true,
     "noImplicitAny": false
   },
   "include": ["src"],
