@@ -3,6 +3,7 @@ import { AppBar, Tab, Tabs } from '@material-ui/core'
 import ChatIcon from '@material-ui/icons/Chat'
 import SettingsIcon from '@material-ui/icons/Settings'
 import withWidth, { isWidthUp } from '@material-ui/core/withWidth'
+import { Breakpoint } from '@material-ui/core/styles/createBreakpoints'
 import { a11yProps } from './TabPanel'
 
 interface TopAppbarProps {
