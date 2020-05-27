@@ -1,11 +1,11 @@
-# docler-webchat
+# webchat-fullstack-showcase
 
-A webchat as test assignment
+Webchat full-stack showcase with Typescript, React, Redux, Socket.io, Node.js, Webpack
 
 ## Tools
 
 - Webpack
-- Typescript, tslint
+- Typescript, eslint
 - Eslint, Prettier
 - lint-staged
 - Material UI

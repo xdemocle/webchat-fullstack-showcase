@@ -1,7 +1,6 @@
 import useMediaQuery from '@material-ui/core/useMediaQuery'
 import { createMuiTheme } from '@material-ui/core/styles'
 
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export default () => {
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)')
 
@@ -9,17 +8,90 @@ export default () => {
     palette: {
       type: prefersDarkMode ? 'dark' : 'light',
       primary: {
-        main: '#ffbe0b',
+        light: prefersDarkMode ? '#ec55fa' : '#f94f36',
+        main: prefersDarkMode ? '#B60DC6' : '#BF0B0B',
+        dark: prefersDarkMode ? '#820094' : '#870000',
       },
       secondary: {
-        main: '#fb5607',
+        light: prefersDarkMode ? '#68fa4e' : '#ffff50',
+        main: prefersDarkMode ? '#1CC60D' : '#ffcc00',
+        dark: prefersDarkMode ? '#009400' : '#c79c00',
       },
-      error: {
-        main: '#ff006e',
-      },
+      // error: {
+      //   main: '#ff006e',
+      // },
       background: {
-        default: '#fff',
+        paper: prefersDarkMode ? '#424242' : '#fff',
+        default: prefersDarkMode ? '#303030' : '#fafafa',
+      },
+      text: {
+        primary: prefersDarkMode ? '#fff' : '#fff',
+        secondary: prefersDarkMode ? 'rgba(255, 255, 255, 0.7)' : '#000',
+        disabled: prefersDarkMode
+          ? 'rgba(0, 0, 0, 0.38)'
+          : 'rgba(255, 255, 255, 0.5)',
+        hint: prefersDarkMode
+          ? 'rgba(0, 0, 0, 0.38)'
+          : 'rgba(255, 255, 255, 0.5)',
       },
     },
+    // props: {
+    //   MuiButton: {
+    //     size: 'small',
+    //   },
+    //   MuiFilledInput: {
+    //     margin: 'dense',
+    //   },
+    //   MuiFormControl: {
+    //     margin: 'dense',
+    //   },
+    //   MuiFormHelperText: {
+    //     margin: 'dense',
+    //   },
+    //   MuiIconButton: {
+    //     size: 'small',
+    //   },
+    //   MuiInputBase: {
+    //     margin: 'dense',
+    //   },
+    //   MuiInputLabel: {
+    //     margin: 'dense',
+    //   },
+    //   MuiListItem: {
+    //     dense: true,
+    //   },
+    //   MuiOutlinedInput: {
+    //     margin: 'dense',
+    //   },
+    //   MuiFab: {
+    //     size: 'small',
+    //   },
+    //   MuiTable: {
+    //     size: 'small',
+    //   },
+    //   MuiTextField: {
+    //     margin: 'dense',
+    //   },
+    //   MuiToolbar: {
+    //     variant: 'dense',
+    //   },
+    // },
+    // overrides: {
+    //   MuiIconButton: {
+    //     sizeSmall: {
+    //       marginLeft: 4,
+    //       marginRight: 4,
+    //       padding: 120,
+    //     },
+    //   },
+    //   MuiButton: {
+    //     sizeSmall: {
+    //       // minimal touch target hit spacing
+    //       marginLeft: 40,
+    //       marginRight: 40,
+    //       padding: 120,
+    //     },
+    //   },
+    // },
   })
 }
