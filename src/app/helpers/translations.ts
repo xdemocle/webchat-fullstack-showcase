@@ -1,14 +1,16 @@
 export default {
   en: {
     locale: 'en',
-    Home: {
-      HELLO: 'Helloworld!',
+    TopAppBar: {
+      Chat: 'Chat',
+      Settings: 'Settings',
     },
   },
   it: {
     locale: 'it',
-    Home: {
-      HELLO: 'Helloworld!',
+    TopAppBar: {
+      Chat: 'Chat',
+      Settings: 'Configurazione',
     },
   },
 }

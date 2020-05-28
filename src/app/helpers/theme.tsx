@@ -17,16 +17,13 @@ export default () => {
         main: prefersDarkMode ? '#1CC60D' : '#ffcc00',
         dark: prefersDarkMode ? '#009400' : '#c79c00',
       },
-      // error: {
-      //   main: '#ff006e',
-      // },
       background: {
         paper: prefersDarkMode ? '#424242' : '#fff',
         default: prefersDarkMode ? '#303030' : '#fafafa',
       },
       text: {
-        primary: prefersDarkMode ? '#fff' : '#fff',
-        secondary: prefersDarkMode ? 'rgba(255, 255, 255, 0.7)' : '#000',
+        primary: prefersDarkMode ? '#fff' : '#000',
+        secondary: prefersDarkMode ? 'rgba(255, 255, 255, 0.7)' : '#333',
         disabled: prefersDarkMode
           ? 'rgba(0, 0, 0, 0.38)'
           : 'rgba(255, 255, 255, 0.5)',
@@ -35,63 +32,5 @@ export default () => {
           : 'rgba(255, 255, 255, 0.5)',
       },
     },
-    // props: {
-    //   MuiButton: {
-    //     size: 'small',
-    //   },
-    //   MuiFilledInput: {
-    //     margin: 'dense',
-    //   },
-    //   MuiFormControl: {
-    //     margin: 'dense',
-    //   },
-    //   MuiFormHelperText: {
-    //     margin: 'dense',
-    //   },
-    //   MuiIconButton: {
-    //     size: 'small',
-    //   },
-    //   MuiInputBase: {
-    //     margin: 'dense',
-    //   },
-    //   MuiInputLabel: {
-    //     margin: 'dense',
-    //   },
-    //   MuiListItem: {
-    //     dense: true,
-    //   },
-    //   MuiOutlinedInput: {
-    //     margin: 'dense',
-    //   },
-    //   MuiFab: {
-    //     size: 'small',
-    //   },
-    //   MuiTable: {
-    //     size: 'small',
-    //   },
-    //   MuiTextField: {
-    //     margin: 'dense',
-    //   },
-    //   MuiToolbar: {
-    //     variant: 'dense',
-    //   },
-    // },
-    // overrides: {
-    //   MuiIconButton: {
-    //     sizeSmall: {
-    //       marginLeft: 4,
-    //       marginRight: 4,
-    //       padding: 120,
-    //     },
-    //   },
-    //   MuiButton: {
-    //     sizeSmall: {
-    //       // minimal touch target hit spacing
-    //       marginLeft: 40,
-    //       marginRight: 40,
-    //       padding: 120,
-    //     },
-    //   },
-    // },
   })
 }
