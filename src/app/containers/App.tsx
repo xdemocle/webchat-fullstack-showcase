@@ -1,9 +1,10 @@
-import { hot } from 'react-hot-loader/root'
 import React from 'react'
+import { hot } from 'react-hot-loader/root'
 import { Container, Paper } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 import TopAppbar from '../components/TopAppbar'
 import { TabPanel } from '../components/TabPanel'
+
 import ChatContainer from './Chat'
 import SettingsContainer from './Settings'
 
@@ -16,8 +17,8 @@ const useStyles = makeStyles({
   paper: {
     flex: 1,
     display: 'flex',
-    justifyContent: 'flex-start',
-    flexDirection: 'column',
+    position: 'relative',
+    overflow: 'hidden',
   },
 })
 
@@ -29,10 +30,10 @@ const App = () => {
     <Container maxWidth="md" disableGutters fixed className={classes.root}>
       <TopAppbar value={value} setValue={setValue} />
       <Paper square className={classes.paper}>
-        <TabPanel value={value} index={0}>
+        <TabPanel direction="right" value={value} index={0}>
           <ChatContainer />
         </TabPanel>
-        <TabPanel value={value} index={1}>
+        <TabPanel direction="left" value={value} index={1}>
           <SettingsContainer />
         </TabPanel>
       </Paper>

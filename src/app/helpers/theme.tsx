@@ -1,8 +1,17 @@
+import { useSelector } from 'react-redux'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
 import { createMuiTheme } from '@material-ui/core/styles'
+import { AppState } from '../store'
 
 export default () => {
-  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)')
+  const { interfaceColor } = useSelector((state: AppState) => state.settings)
+  let prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)')
+
+  if (interfaceColor === 'light') {
+    prefersDarkMode = false
+  } else if (interfaceColor === 'dark') {
+    prefersDarkMode = true
+  }
 
   return createMuiTheme({
     palette: {

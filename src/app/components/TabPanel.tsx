@@ -1,9 +1,23 @@
 import React from 'react'
+import { makeStyles } from '@material-ui/core/styles'
+import { Slide } from '@material-ui/core'
+
+const useStyles = makeStyles({
+  slides: {
+    position: 'absolute',
+    top: 0,
+    right: 0,
+    bottom: 0,
+    left: 0,
+    overflowY: 'auto',
+  },
+})
 
 interface TabPanelProps {
   children?: React.ReactNode
   index: number
   value: number
+  direction: string
 }
 
 export const a11yProps = (index: number) => {
@@ -14,17 +28,25 @@ export const a11yProps = (index: number) => {
 }
 
 export const TabPanel = (props: TabPanelProps) => {
-  const { children, value, index, ...other } = props
+  const classes = useStyles()
+  const { children, direction = 'left', value, index, ...other } = props
 
   return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`simple-tabpanel-${index}`}
-      aria-labelledby={`simple-tab-${index}`}
-      {...other}
+    <Slide
+      direction={direction}
+      in={value === index}
+      mountOnEnter
+      unmountOnExit
     >
-      {value === index && children}
-    </div>
+      <div
+        role="tabpanel"
+        id={`simple-tabpanel-${index}`}
+        aria-labelledby={`simple-tab-${index}`}
+        className={classes.slides}
+        {...other}
+      >
+        {children}
+      </div>
+    </Slide>
   )
 }
