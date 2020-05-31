@@ -11,6 +11,7 @@ import {
   FormControl,
   FormControlLabel,
   FormLabel,
+  Grid,
   MenuItem,
   Radio,
   RadioGroup,
@@ -29,6 +30,10 @@ import {
 const useStyles = makeStyles(theme =>
   createStyles({
     root: {
+      flex: 1,
+      flexDirection: 'column',
+    },
+    card: {
       margin: theme.spacing(3),
       [theme.breakpoints.down('xs')]: {
         margin: theme.spacing(0),
@@ -90,8 +95,8 @@ export default () => {
   }
 
   return (
-    <React.Fragment>
-      <Card className={classes.root}>
+    <Grid container className={classes.root}>
+      <Card className={classes.card}>
         <CardHeader
           title={t('TitleView')}
           titleTypographyProps={{ variant: 'h5', color: 'primary' }}
@@ -208,12 +213,12 @@ export default () => {
           </FormControl>
         </CardContent>
       </Card>
-      <Card className={classes.root}>
-        {/* <CardHeader
-          title={t('TitleView')}
+      <Card className={classes.card}>
+        <CardHeader
+          title={t('TitleDefaultBlock')}
           titleTypographyProps={{ variant: 'h5', color: 'primary' }}
           subheader={<Divider className={classes.dividerCardHeader} />}
-        /> */}
+        />
         <CardContent>
           <FormControl component="fieldset" fullWidth>
             <Button
@@ -227,6 +232,6 @@ export default () => {
           </FormControl>
         </CardContent>
       </Card>
-    </React.Fragment>
+    </Grid>
   )
 }

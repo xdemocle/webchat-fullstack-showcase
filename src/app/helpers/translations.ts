@@ -7,6 +7,7 @@ export default {
     },
     SettingsView: {
       TitleView: 'Settings',
+      TitleDefaultBlock: 'Danger Action',
       UserNameLegend: 'User Name',
       UserNameErrorText: 'Error',
       InterfaceColorLegend: 'Interface Color',
@@ -31,6 +32,7 @@ export default {
     },
     SettingsView: {
       TitleView: 'Configurazione',
+      TitleDefaultBlock: 'Azione Pericolosa',
       UserNameLegend: 'Nome Utente',
       UserNameErrorText: 'Errore',
       InterfaceColorLegend: 'Colore Interfaccia',
@@ -55,6 +57,7 @@ export default {
     },
     SettingsView: {
       TitleView: 'Configuração',
+      TitleDefaultBlock: 'Ação de Perigo',
       UserNameLegend: 'Nome do Usuário',
       UserNameErrorText: 'Erro',
       InterfaceColorLegend: 'Cor da Interface',

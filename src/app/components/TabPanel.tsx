@@ -1,17 +1,22 @@
 import React from 'react'
-import { makeStyles } from '@material-ui/core/styles'
+import { makeStyles, createStyles } from '@material-ui/core/styles'
 import { Slide } from '@material-ui/core'
 
-const useStyles = makeStyles({
-  slides: {
-    position: 'absolute',
-    top: 0,
-    right: 0,
-    bottom: 0,
-    left: 0,
-    overflowY: 'auto',
-  },
-})
+const useStyles = makeStyles((/* theme */) =>
+  createStyles({
+    slides: {
+      position: 'absolute',
+      top: 0,
+      right: 0,
+      bottom: 0,
+      left: 0,
+      overflowY: 'auto',
+      width: '100%',
+      display: 'flex',
+      flex: 1,
+      flexDirection: 'column',
+    },
+  }))
 
 interface TabPanelProps {
   children?: React.ReactNode
@@ -27,7 +32,7 @@ export const a11yProps = (index: number) => {
   }
 }
 
-export const TabPanel = (props: TabPanelProps) => {
+export default (props: TabPanelProps) => {
   const classes = useStyles()
   const { children, direction = 'left', value, index, ...other } = props
 

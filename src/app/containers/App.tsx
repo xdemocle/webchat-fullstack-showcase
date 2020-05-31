@@ -1,26 +1,29 @@
 import React from 'react'
 import { hot } from 'react-hot-loader/root'
 import { Container, Paper } from '@material-ui/core'
-import { makeStyles } from '@material-ui/core/styles'
+import { createStyles, makeStyles } from '@material-ui/core/styles'
 import TopAppbar from '../components/TopAppbar'
-import { TabPanel } from '../components/TabPanel'
+import TabPanel from '../components/TabPanel'
 import { useSelector } from 'react-redux'
 import ChatContainer from './Chat'
 import SettingsContainer from './Settings'
 
-const useStyles = makeStyles({
-  root: {
-    display: 'flex',
-    flexDirection: 'column',
-    minHeight: '100vh',
-  },
-  paper: {
-    flex: 1,
-    display: 'flex',
-    position: 'relative',
-    overflow: 'hidden',
-  },
-})
+const useStyles = makeStyles(theme =>
+  createStyles({
+    root: {
+      display: 'flex',
+      flexDirection: 'column',
+      minHeight: '100vh',
+    },
+    paper: {
+      position: 'relative',
+      display: 'flex',
+      flex: 1,
+      overflow: 'hidden',
+      backgroundColor: theme.palette.type === 'dark' ? '#505050' : '#f5f5f5',
+    },
+  })
+)
 
 const App = () => {
   const classes = useStyles()
