@@ -1,8 +1,7 @@
 {
-  "name": "docler-webchat-fullstack",
+  "name": "webchat-fullstack-showcase",
   "version": "0.0.1",
-  "description": "Docler Webchat",
-  "private": true,
+  "description": "Webchat full-stack showcase with Typescript, React, Redux, Socket.io, Node.js, Webpack.",
   "license": "MIT",
   "scripts": {
     "clean": "rimraf ./dist && mkdir dist",
@@ -80,6 +79,7 @@
     "random": "^2.2.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-form": "^4.0.1",
     "react-redux": "^7.2.0",
     "react-translate": "^7.0.1",
     "redux": "^4.0.5",
