@@ -4,7 +4,7 @@ import { Container, Paper } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 import TopAppbar from '../components/TopAppbar'
 import { TabPanel } from '../components/TabPanel'
-
+import { useSelector } from 'react-redux'
 import ChatContainer from './Chat'
 import SettingsContainer from './Settings'
 
@@ -25,10 +25,11 @@ const useStyles = makeStyles({
 const App = () => {
   const classes = useStyles()
   const [value, setValue] = React.useState(0)
+  const { messages } = useSelector(state => state.chat)
 
   return (
     <Container maxWidth="md" disableGutters fixed className={classes.root}>
-      <TopAppbar value={value} setValue={setValue} />
+      <TopAppbar badge={messages.length} value={value} setValue={setValue} />
       <Paper square className={classes.paper}>
         <TabPanel direction="right" value={value} index={0}>
           <ChatContainer />
