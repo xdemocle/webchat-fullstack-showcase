@@ -29,6 +29,7 @@
   "devDependencies": {
     "@babel/core": "^7.10.0",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-transform-runtime": "^7.10.1",
     "@babel/preset-env": "^7.10.0",
     "@babel/preset-react": "^7.10.0",
     "@babel/preset-typescript": "^7.9.0",
@@ -38,6 +39,7 @@
     "babel-loader": "^8.1.0",
     "bitbar-webpack-progress-plugin": "^1.0.0",
     "clean-webpack-plugin": "^3.0.0",
+    "clsx": "^1.1.1",
     "copy-webpack-plugin": "^6.0.1",
     "cross-env": "^7.0.2",
     "eslint": "^7.1.0",
@@ -81,6 +83,7 @@
     "react-dom": "^16.13.1",
     "react-form": "^4.0.1",
     "react-redux": "^7.2.0",
+    "react-scroll": "^1.7.16",
     "react-translate": "^7.0.1",
     "redux": "^4.0.5",
     "redux-localstorage": "^0.4.1",

@@ -9,6 +9,7 @@ Webchat full-stack showcase with Typescript, React, Redux, Socket.io, Node.js, W
 - Eslint, Prettier
 - lint-staged
 - Material UI
+- Optimistic UI
 
 webpackbar bitbar-webpack-progress-plugin
 
@@ -20,9 +21,8 @@ material-ui.com/styles/basics/#hook-api
 
 import { makeStyles } from '@material-ui/core/styles';
 
-Chose sipler plugin for internatiolization
+plugin for internatiolization
 
 ## Optional
 
-- theme styling
 - Adding PWA (webpack.js.org/guides/progressive-web-application)
