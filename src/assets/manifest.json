@@ -1,6 +1,6 @@
 {
-  "name": "DoclerChat",
-  "short_name": "DC",
+  "name": "Webchat Showcase",
+  "short_name": "WS",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
