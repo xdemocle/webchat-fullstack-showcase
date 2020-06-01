@@ -1,6 +1,11 @@
+/**
+ * Fork with changes from:
+ * https://raw.githubusercontent.com/rakeden/typescript-socketio-react-redux-chat/master/server/src/index.ts
+ */
 import * as express from 'express'
 import * as http from 'http'
 import * as socketIo from 'socket.io'
+import { SOCKET_PORT } from '../app/constants'
 
 const isEnvProduction = process.env.NODE_ENV !== 'development'
 
@@ -11,7 +16,7 @@ class Server {
   private io: any
 
   constructor() {
-    this.port = 8008
+    this.port = SOCKET_PORT
     this.createApp()
     this.createServer()
     this.createSocket()
@@ -49,7 +54,7 @@ class Server {
       socket.on('action', (action: any) => {
         switch (action.type) {
           case 'SEND_MESSAGE':
-            this.io.emit('GET_MESSAGE', action.data)
+            this.io.emit('GET_MESSAGE', action.payload)
         }
       })
 

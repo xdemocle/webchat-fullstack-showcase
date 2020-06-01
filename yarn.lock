@@ -6303,11 +6303,6 @@ react-dom@^16.13.1:
     prop-types "^15.6.2"
     scheduler "^0.19.1"
 
-react-form@^4.0.1:
-  version "4.0.1"
-  resolved "https://registry.npmjs.org/react-form/-/react-form-4.0.1.tgz#f442adae7142261a6650a63001c49827e4317ca5"
-  integrity sha512-vhsCuBLZJYjm6vd8TBxIhIWeB/8Jg4mmmiR3Zj+1zIGBM39qJf1CLqekadLp0J9NeW0EsZxUnBtbmEnMeZ/7Pw==
-
 react-hot-loader@^4.12.21:
   version "4.12.21"
   resolved "https://registry.npmjs.org/react-hot-loader/-/react-hot-loader-4.12.21.tgz#332e830801fb33024b5a147d6b13417f491eb975"
@@ -6453,6 +6448,11 @@ redux-localstorage@^0.4.1:
   version "0.4.1"
   resolved "https://registry.npmjs.org/redux-localstorage/-/redux-localstorage-0.4.1.tgz#faf6d719c581397294d811473ffcedee065c933c"
   integrity sha1-+vbXGcWBOXKU2BFHP/zt7gZckzw=
+
+redux-socket.io-middleware@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.npmjs.org/redux-socket.io-middleware/-/redux-socket.io-middleware-1.0.4.tgz#5ab34821629383889fe871525d8c257f8416910b"
+  integrity sha1-WrNIIWKTg4if6HFSXYwlf4QWkQs=
 
 redux@*, redux@^4.0.0, redux@^4.0.5:
   version "4.0.5"
@@ -7843,6 +7843,11 @@ uuid@^7.0.2:
   version "7.0.3"
   resolved "https://registry.npmjs.org/uuid/-/uuid-7.0.3.tgz#c5c9f2c8cf25dc0a372c4df1441c41f5bd0c680b"
   integrity sha512-DPSke0pXhTZgoF/d+WSt2QaKMCFSfx7QegxEWT+JOuHF5aWrKEn0G+ztjuJg/gG8/ItK+rbPCD/yNv8yyih6Cg==
+
+uuid@^8.1.0:
+  version "8.1.0"
+  resolved "https://registry.npmjs.org/uuid/-/uuid-8.1.0.tgz#6f1536eb43249f473abc6bd58ff983da1ca30d8d"
+  integrity sha512-CI18flHDznR0lq54xBycOVmphdCYnQLKn8abKn7PXUiKUGdEd+/l9LWNJmugXel4hXq7S+RMNl34ecyC9TntWg==
 
 v8-compile-cache@2.0.3:
   version "2.0.3"

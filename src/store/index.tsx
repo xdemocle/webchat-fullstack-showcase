@@ -1,10 +1,12 @@
-import { compose, createStore, combineReducers, Reducer } from 'redux'
+import { compose, createStore, combineReducers } from 'redux'
 import persistState from 'redux-localstorage'
+import socketMiddleWare from './socketMiddleWare'
 import { ChatState } from './chat/types'
 import { SettingsState } from './settings/types'
 import chatReducer from './chat/reducer'
 import settingsReducer from './settings/reducer'
-
+export * from './chat/types'
+export * from './settings/types'
 export * from './chat/actions'
 export * from './settings/actions'
 
@@ -14,7 +16,7 @@ export interface AppState {
   settings: SettingsState
 }
 
-const rootReducer: Reducer<AppState> = combineReducers({
+const rootReducer = combineReducers({
   chat: chatReducer,
   settings: settingsReducer,
 })
@@ -22,7 +24,6 @@ const rootReducer: Reducer<AppState> = combineReducers({
 // Not using __REDUX_DEVTOOLS_EXTENSION__ tool because some bug with react-localstorage
 // const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION__ || compose
 
-export default createStore<AppState, any, any, any>(
-  rootReducer,
-  compose(persistState())
-)
+const finalCreateStore = compose(socketMiddleWare)(createStore)
+
+export default finalCreateStore(rootReducer, persistState())
