@@ -55,7 +55,7 @@ yarn lint
 - [x] Write clean, commented, small and modularized code;
 - [x] Working code, that works if we serve it with the http server and open in a
       browser;
-- [ ] If the user is on another tab and he/she gets a message, the chat tab will blink,
+- [x] If the user is on another tab and he/she gets a message, the chat tab will blink,
       until he doesn’t read the message.
 - [x] README;
 

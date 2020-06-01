@@ -10,9 +10,13 @@ import { getMessage, getStateMessages } from '../store/chat/actions'
 import translations from './helpers/translations'
 import initializeTheme from './helpers/theme'
 import App from './containers/App'
+import blinkTab from './helpers/browserTabBlinker'
 
 io.on('GET_MESSAGE', message => {
   store.dispatch(getMessage(message))
+
+  // Just a simple notification in browser tab
+  blinkTab('(*)')
 })
 
 io.on('GET_STATE_MESSAGES', messages => {
