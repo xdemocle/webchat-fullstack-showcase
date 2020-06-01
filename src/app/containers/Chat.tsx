@@ -46,7 +46,8 @@ export default () => {
 
     dispatch(sendMessage(values))
 
-    // debugger
+    // TODO: We can use an additional flag in MessageList component to show
+    // that the message is still sending remotely to the server.
     // return dis.then(() => {
     //   setIsSubmitting(false)
     // })

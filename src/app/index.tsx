@@ -6,13 +6,17 @@ import { TranslatorProvider } from 'react-translate'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import store, { AppState } from '../store'
 import { io } from '../store/socketMiddleWare'
-import { getMessage } from '../store/chat/actions'
+import { getMessage, getStateMessages } from '../store/chat/actions'
 import translations from './helpers/translations'
 import initializeTheme from './helpers/theme'
 import App from './containers/App'
 
 io.on('GET_MESSAGE', message => {
   store.dispatch(getMessage(message))
+})
+
+io.on('GET_STATE_MESSAGES', messages => {
+  store.dispatch(getStateMessages(messages))
 })
 
 const Index = () => {

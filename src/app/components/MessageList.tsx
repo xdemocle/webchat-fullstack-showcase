@@ -65,7 +65,7 @@ export default (props: MessageListProps) => {
   useEffect(() => {
     animateScroll.scrollToBottom({
       containerId: 'containerMessageList',
-      duration: 300,
+      duration: 150,
     })
   })
 

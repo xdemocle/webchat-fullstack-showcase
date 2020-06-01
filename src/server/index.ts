@@ -9,6 +9,10 @@ import { SOCKET_PORT } from '../app/constants'
 
 const isEnvProduction = process.env.NODE_ENV !== 'development'
 
+const ChatState = {
+  messages: [],
+}
+
 class Server {
   public app: any
   private server: any
@@ -51,10 +55,17 @@ class Server {
     this.io.on('connect', (socket: any) => {
       console.log('Connected client on port %s.', this.port)
 
+      // During first connection, emit the whole history to the new client connected
+      this.io.emit('GET_STATE_MESSAGES', ChatState.messages)
+
       socket.on('action', (action: any) => {
         switch (action.type) {
           case 'SEND_MESSAGE':
+            // Emit to every clients connected
             this.io.emit('GET_MESSAGE', action.payload)
+
+            // Save in temporary store of socket server instance
+            ChatState.messages.push(action.payload)
         }
       })
 

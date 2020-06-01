@@ -12,7 +12,8 @@
     "prebuild": "yarn clean",
     "build": "cross-env NODE_ENV=production webpack",
     "serv-prod": "cross-env NODE_ENV=production run-p build ts-script",
-    "lint": "eslint 'src/**/*.{js,ts,tsx}' --quiet --fix"
+    "lint": "eslint 'src/**/*.{js,ts,tsx}' --quiet --fix",
+    "test": "echo 'Aaaaargh, I didn\\'t manage to add tests for lack of time!!!'"
   },
   "repository": {
     "type": "git",

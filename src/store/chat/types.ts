@@ -1,5 +1,6 @@
 export const SEND_MESSAGE = 'SEND_MESSAGE'
 export const GET_MESSAGE = 'GET_MESSAGE'
+export const GET_STATE_MESSAGES = 'GET_STATE_MESSAGES'
 
 export interface Message {
   id: string
@@ -10,7 +11,6 @@ export interface Message {
 
 export interface ChatState {
   messages: Message[]
-  // payload: Message
 }
 
 export interface SendMessageAction {
@@ -23,4 +23,12 @@ export interface GetMessageAction {
   payload: Message
 }
 
-export type ChatActionTypes = SendMessageAction | GetMessageAction
+export interface GetStateMessagesAction {
+  type: typeof GET_STATE_MESSAGES
+  payload: Message[]
+}
+
+export type ChatActionTypes =
+  | SendMessageAction
+  | GetMessageAction
+  | GetStateMessagesAction
