@@ -7,7 +7,6 @@ import { Message } from '../../store/chat/types'
 
 const useStyles = makeStyles(({ palette, spacing }) => {
   const radius = spacing(2.5)
-  const rightBgColor = palette.primary.main
 
   return createStyles({
     root: {
@@ -26,13 +25,13 @@ const useStyles = makeStyles(({ palette, spacing }) => {
     left: {
       borderTopRightRadius: radius,
       borderBottomRightRadius: radius,
-      backgroundColor: palette.grey[100],
+      backgroundColor: palette.grey[300],
       color: palette.grey[900],
     },
     right: {
       borderTopLeftRadius: radius,
       borderBottomLeftRadius: radius,
-      backgroundColor: rightBgColor,
+      backgroundColor: palette.primary.main,
       color: palette.common.white,
     },
     leftFirst: {
