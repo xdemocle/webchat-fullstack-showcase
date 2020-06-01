@@ -2,6 +2,7 @@
   "name": "webchat-fullstack-showcase",
   "version": "0.0.1",
   "description": "Webchat full-stack showcase with Typescript, React, Redux, Socket.io, Node.js, Webpack.",
+  "appName": "Webchat Showcase",
   "license": "MIT",
   "scripts": {
     "clean": "rimraf ./dist && mkdir dist",

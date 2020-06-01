@@ -6,6 +6,7 @@ process.env.NODE_ENV = process.env.NODE_ENV || 'development'
 const path = require('path')
 const webpack = require('webpack')
 const WebpackBar = require('webpackbar')
+const appConstants = require('./package.json')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const CopyPlugin = require('copy-webpack-plugin')
 const BitBarProgressPlugin = require('bitbar-webpack-progress-plugin')
@@ -122,7 +123,7 @@ module.exports = {
       production: isEnvProduction,
       inject: true,
       filename: 'index.html',
-      title: 'Docler Webchat',
+      title: appConstants.appName,
       template: path.resolve(__dirname, 'src/app/index.ejs'),
       favicon: path.resolve(__dirname, 'src/assets/favicon.ico'),
       cache: isEnvProduction,
