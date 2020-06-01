@@ -28,7 +28,7 @@ const useStyles = makeStyles(theme =>
 const App = () => {
   const classes = useStyles()
   const [value, setValue] = React.useState(0)
-  const { messages } = useSelector(state => state.chat)
+  const { messages } = useSelector((state: any) => state.chat)
 
   return (
     <Container maxWidth="md" disableGutters fixed className={classes.root}>

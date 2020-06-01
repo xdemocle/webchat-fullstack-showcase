@@ -15,7 +15,7 @@ interface TopAppbarProps {
 }
 
 const TopAppbar = (props: TopAppbarProps) => {
-  const { badge, value, setValue, width } = props
+  const { /*badge,*/ value, setValue, width } = props
   const t = useTranslate('TopAppBar')
 
   const handleChange = (event: React.ChangeEvent<any>, newValue: number) => {
@@ -36,7 +36,8 @@ const TopAppbar = (props: TopAppbarProps) => {
         <Tab
           wrapped
           label={isNotMobile && t('Chat')}
-          icon={<Badge badgeContent={badge} {...defaultProps} />}
+          // icon={<Badge badgeContent={badge} {...defaultProps} />}
+          icon={<Badge {...defaultProps} />}
           {...a11yProps(0)}
         />
         <Tab

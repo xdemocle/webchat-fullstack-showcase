@@ -22,7 +22,7 @@ interface TabPanelProps {
   children?: React.ReactNode
   index: number
   value: number
-  direction: string
+  direction: any
 }
 
 export const a11yProps = (index: number) => {

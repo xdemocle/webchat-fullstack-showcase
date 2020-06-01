@@ -1,23 +1,15 @@
-import { ChatState } from './types'
-import { SEND_MESSAGE, GET_MESSAGE } from './actions'
+import { ChatState, ChatActionTypes, ADD_MESSAGE } from './types'
 
 const defaultState: ChatState = {
   messages: [],
 }
 
-export default (state = defaultState, action: any) => {
-  console.log(action)
+export default (state = defaultState, action: ChatActionTypes) => {
   switch (action.type) {
-    case SEND_MESSAGE:
-      console.log(action.type)
-      return {
-        messages: action.data,
-      }
-    case GET_MESSAGE:
-      console.log(action)
-      state.messages.push(action.data)
+    case ADD_MESSAGE:
       return {
         ...state,
+        messages: [...state.messages, action.payload],
       }
     default:
       return state

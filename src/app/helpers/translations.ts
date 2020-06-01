@@ -23,6 +23,11 @@ export default {
       LanguageLegend: 'Language',
       ResetSettingsButton: 'Reset to defaults',
     },
+    ChatView: {
+      TitleView: 'Chat',
+      TextSendButton: 'Send',
+      TextPlaceholder: 'Type your Message here',
+    },
   },
   it: {
     locale: 'it',
@@ -48,6 +53,11 @@ export default {
       LanguageLegend: 'Lingua',
       ResetSettingsButton: 'Ripristina impostazioni predefinite',
     },
+    ChatView: {
+      TitleView: 'Chat',
+      TextSendButton: 'Invia',
+      TextPlaceholder: 'Scrivi qui il tuo messaggio',
+    },
   },
   pt: {
     locale: 'pt',
@@ -72,6 +82,11 @@ export default {
       SendMessagesOffRadio: 'Desligar',
       LanguageLegend: 'Língua',
       ResetSettingsButton: 'Redefinir para padrões',
+    },
+    ChatView: {
+      TitleView: 'Chat',
+      TextSendButton: 'Enviar',
+      TextPlaceholder: 'Digite aqui sua mensagem',
     },
   },
 }

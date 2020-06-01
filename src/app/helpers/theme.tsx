@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
 import { createMuiTheme } from '@material-ui/core/styles'
-import { AppState } from '../store'
+import { AppState } from '../../store'
 
 export default () => {
   const { interfaceColor } = useSelector((state: AppState) => state.settings)
@@ -37,8 +37,8 @@ export default () => {
           ? 'rgba(0, 0, 0, 0.38)'
           : 'rgba(255, 255, 255, 0.5)',
         hint: prefersDarkMode
-          ? 'rgba(0, 0, 0, 0.38)'
-          : 'rgba(255, 255, 255, 0.5)',
+          ? 'rgba(255, 255, 255, 0.23)'
+          : 'rgba(0, 0, 0, 0.23)',
       },
     },
   })

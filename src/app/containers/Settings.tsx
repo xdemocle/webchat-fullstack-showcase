@@ -66,7 +66,7 @@ export default () => {
     clockDisplay,
     sendMessagesShortcut,
     language,
-  } = useSelector(state => state.settings)
+  } = useSelector((state: any) => state.settings)
 
   // TODO: Improve real time validation instead of just at onBlur.
   const errorUsername = username.length < 3
@@ -110,8 +110,6 @@ export default () => {
               defaultValue={username}
               className={classes.formElements}
               onBlur={handleChangeUserName}
-              minLength={3}
-              maxLength={25}
               required
               error={errorUsername}
               helperText={errorUsername && t('UserNameErrorText')}
